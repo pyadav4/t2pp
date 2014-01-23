@@ -1,4 +1,6 @@
 <%@include file="/libs/foundation/global.jsp"%>
+<cq:includeClientLib categories="mp.languageselector"/>
+<%currentDesign.writeCssIncludes(pageContext); %>
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.util.Set"%>
 <%@page import="java.util.HashSet"%>
