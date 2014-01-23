@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<workspaceFilter vesion="1.0">
+    <filter root="/apps/mp">
+        <exclude pattern="/apps/mp/install.*"/>
+        <exclude pattern="/apps/mp/runmodes.*"/>
+		<exclude pattern="/apps/mp/src.*"/>
+    </filter>
+	<filter root="/etc/designs/mp">
+        <exclude pattern="/etc/designs/mp/jcr:content"/>
+    </filter>
+</workspaceFilter>
