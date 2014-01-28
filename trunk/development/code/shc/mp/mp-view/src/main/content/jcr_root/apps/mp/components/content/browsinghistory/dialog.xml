@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="cq:Dialog"
+    title="BrowsingHistory"
+    xtype="panel">
+    <items jcr:primaryType="cq:WidgetCollection">
+        <selectCategory
+            jcr:primaryType="cq:Widget"
+            defaultValue="sss"
+            fieldLabel="Select Category"
+            name="./selectCategory"
+            namespaces="[forum,stockphotography,marketing,facebook]"
+            overallMaximum="1"
+            xtype="customtags"/>
+        <description
+            jcr:primaryType="cq:Widget"
+            height="30"
+            text="Select the catagory of pages you want to check the history on."
+            xtype="static"/>
+        <operator
+            jcr:primaryType="cq:Widget"
+            defaultValue="equals"
+            fieldLabel="Operator"
+            name="./operator"
+            operators="[equals,greaterthan,lessthan]"
+            type="select"
+            xtype="operatorselection"/>
+        <number
+            jcr:primaryType="cq:Widget"
+            fieldLabel="Visits greater than"
+            height="30"
+            name="./number"
+            xtype="textfield"/>
+        <jsObject
+            jcr:primaryType="cq:Widget"
+            defaultValue="clientcontext.surferinfo"
+            fieldLabel="Store"
+            name="./jsObject"
+            readOnly="true"
+            xtype="hidden"/>
+        <label
+            jcr:primaryType="cq:Widget"
+            defaultValue="Referer"
+            name="./label"
+            xtype="hidden"/>
+        <name
+            jcr:primaryType="cq:Widget"
+            defaultValue="productType"
+            name="./name"
+            xtype="hidden"/>
+        <valueFormat
+            jcr:primaryType="cq:Widget"
+            defaultValue=""
+            name="./valueFormat"
+            xtype="hidden"/>
+    </items>
+</jcr:root>
