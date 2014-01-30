@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Dialog"
+    activeTab="0"
+    xtype="tabpanel">
+    <items jcr:primaryType="cq:WidgetCollection">
+        <tab0
+            jcr:primaryType="nt:unstructured"
+            title="General"
+            xtype="panel">
+            <items jcr:primaryType="cq:WidgetCollection">
+                <actionsTitle
+                    jcr:primaryType="cq:Widget"
+                    emptyText="Actions"
+                    fieldLabel="Actions Title"
+                    name="./actionsTitle"
+                    xtype="textfield"/>
+                <editor
+                    jcr:primaryType="cq:Widget"
+                    emptyText_noI18n="./asseteditor"
+                    fieldDescription="Asset Editor that will be opened when doubleclicking an asset."
+                    fieldLabel="Path of Asset Editor"
+                    name="./editorPath"
+                    rootPath="/content"
+                    xtype="pathfield"/>
+                <limit
+                    jcr:primaryType="cq:Widget"
+                    fieldLabel="Number Of Results"
+                    fieldSubLabel="Per Page"
+                    name="./limit"
+                    type="combobox"
+                    vtype="digits"
+                    xtype="selection">
+                    <options jcr:primaryType="cq:WidgetCollection">
+                        <o0
+                            jcr:primaryType="nt:unstructured"
+                            value="12"/>
+                        <o1
+                            jcr:primaryType="nt:unstructured"
+                            value="24"/>
+                        <o2
+                            jcr:primaryType="nt:unstructured"
+                            value="48"/>
+                        <o3
+                            jcr:primaryType="nt:unstructured"
+                            value="96"/>
+                    </options>
+                </limit>
+            </items>
+        </tab0>
+        <tab1
+            jcr:primaryType="nt:unstructured"
+            title="Paths"
+            xtype="panel">
+            <items jcr:primaryType="cq:WidgetCollection">
+                <path
+                    jcr:primaryType="cq:Widget"
+                    fieldDescription="Search will be run within the specified paths. This will be overwritten if a path predicate is set."
+                    fieldLabel="Paths"
+                    name="./path"
+                    xtype="multifield">
+                    <fieldConfig
+                        jcr:primaryType="nt:unstructured"
+                        rootPath="/content/dam"
+                        xtype="pathfield"/>
+                </path>
+            </items>
+        </tab1>
+        <tab2
+            jcr:primaryType="nt:unstructured"
+            title="Text"
+            xtype="panel">
+            <items jcr:primaryType="cq:WidgetCollection">
+                <of
+                    jcr:primaryType="cq:Widget"
+                    emptyText_noI18n="of"
+                    fieldDescription="Sample usage: Page 2 &lt;b>of&lt;/b> 4"
+                    fieldLabel="Of Text"
+                    name="./textOf"
+                    xtype="textfield"/>
+                <page
+                    jcr:primaryType="cq:Widget"
+                    emptyText_noI18n="Page"
+                    fieldDescription="Sample usage: &lt;b>Page&lt;/b> 2 of 4"
+                    fieldLabel="Page Text"
+                    name="./textPage"
+                    xtype="textfield"/>
+                <results
+                    jcr:primaryType="cq:Widget"
+                    emptyText_noI18n="Results"
+                    fieldDescription="Sample usage: 24 &lt;b>Results&lt;/b>"
+                    fieldLabel="Results Text"
+                    name="./textResults"
+                    xtype="textfield"/>
+            </items>
+        </tab2>
+        <tab3
+            jcr:primaryType="nt:unstructured"
+            title="Advanced"
+            xtype="panel">
+            <items jcr:primaryType="cq:WidgetCollection">
+                <feedUrl
+                    jcr:primaryType="cq:Widget"
+                    emptyText_noI18n="/bin/querybuilder.feed"
+                    fieldLabel="Feed URL"
+                    name="./feedUrl"
+                    xtype="textfield"/>
+                <type
+                    jcr:primaryType="cq:Widget"
+                    emptyValue="dam:Asset"
+                    fieldDescription="Defauts to 'dam:Asset'."
+                    fieldLabel="Node Types"
+                    name="./type"
+                    xtype="multifield">
+                    <fieldConfig
+                        jcr:primaryType="nt:unstructured"
+                        rootPath="/content/dam"
+                        xtype="pathfield"/>
+                </type>
+                <url
+                    jcr:primaryType="cq:Widget"
+                    emptyText_noI18n="/bin/querybuilder.json"
+                    fieldLabel="Query Builder URL"
+                    name="./url"
+                    xtype="textfield"/>
+            </items>
+        </tab3>
+    </items>
+</jcr:root>

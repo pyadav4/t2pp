@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Dialog"
+    title="Language Selector"
+    xtype="panel">
+    <items jcr:primaryType="cq:WidgetCollection">
+        <websiteroot
+            jcr:primaryType="nt:unstructured"
+            allowBlank="{Boolean}false"
+            blankText="Please select wesite root path"
+            fieldDescription="Path is used to extract languages, Website root path should follow hierarchy: Region/country/language e.g.northamerica/usa/en_us"
+            fieldLabel="Select Website Root Path"
+            name="./websiterootpath"
+            xtype="pathfield"/>
+    </items>
+</jcr:root>

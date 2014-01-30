@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="cq:Dialog"
+    title="List Lens Properties"
+    xtype="panel">
+    <items jcr:primaryType="cq:WidgetCollection">
+        <created
+            jcr:primaryType="cq:Widget"
+            emptyText_noI18n="Created:"
+            fieldLabel="Created Text"
+            name="./textCreated"
+            xtype="textfield"/>
+        <format
+            jcr:primaryType="cq:Widget"
+            emptyText_noI18n="d-M-Y H:i"
+            fieldDescription="Date and time pattern string, samples:&lt;br/>y m d for 09 08 01&lt;br/>j-M-Y H:i for 1-Aug-2009 08:45"
+            fieldLabel="Date Format"
+            name="./dateFormat"
+            xtype="textfield"/>
+        <modified
+            jcr:primaryType="cq:Widget"
+            emptyText_noI18n="Modified:"
+            fieldLabel="Modified Text"
+            name="./textModified"
+            xtype="textfield"/>
+        <name
+            jcr:primaryType="cq:Widget"
+            fieldLabel="Lens Name"
+            name="./name"
+            xtype="textfield"/>
+    </items>
+</jcr:root>

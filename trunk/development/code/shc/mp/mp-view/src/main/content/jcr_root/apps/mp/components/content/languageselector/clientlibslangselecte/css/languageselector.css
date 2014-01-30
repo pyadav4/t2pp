@@ -34,15 +34,16 @@
     padding-bottom:5px;
 }
 .lang .btn {
-    background: url("../images/up-arrow.png") no-repeat scroll 10px center #666;
+    background: url("../../images/down-arrow.png") no-repeat scroll 10px center #666;
     cursor: pointer;
     display: inline-block;
     padding: 3px 10px 3px 30px;
     color:#fff;
     position:absolute;
+    white-space: nowrap;
 }
 .lang .btn.selected {
-    background: url("../images/down-arrow.png") no-repeat scroll 10px center #666;
+    background: url("../../images/up-arrow.png") no-repeat scroll 10px center #666;
 }
 .lang .links {
     padding:5px 20px 5px 0;

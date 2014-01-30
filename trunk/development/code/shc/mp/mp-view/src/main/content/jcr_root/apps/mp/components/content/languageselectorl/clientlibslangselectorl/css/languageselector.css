@@ -1,0 +1,35 @@
+.lang-menu {
+    background: url("../../images/lang-menu-bg.png") repeat-x scroll 50% 0 rgba(0, 0, 0, 0);
+    margin:0;
+    height:30px;
+}
+.lang-menu ul{
+    margin:auto;
+    padding:0;
+    text-align: right;
+    width: 960px;
+}
+
+.lang-menu li {
+    background: url("../../images/lang-menu-divider.png") no-repeat scroll 0 1px rgba(0, 0, 0, 0);
+    display: inline-block;
+    padding: 5px 0;
+    list-style:None;
+}
+
+.lang-menu li a {
+    font-family:arial;
+    color: #FFFFFF;
+    display: block;
+    font-size: 11px;
+    height: 34px;
+    min-width: 32px;
+    overflow: hidden;
+    padding: 2px 9px 0;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+    z-index: 1;
+
+}

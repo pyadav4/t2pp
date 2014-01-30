@@ -1,0 +1,101 @@
+@charset "utf-8";
+/* CSS Document */ 
+#languageSwitcher, #languageSwitcher * {
+    margin: 0;
+    padding: 0; 
+    outline: none;
+}
+
+#languageSwitcher ul {
+    list-style: none;   
+}
+
+#languageSwitcher {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    color: #444;
+    line-height: normal;
+    position: relative; /* sets the initial position for the drop-down menu */  
+    z-index: 100;
+    float:left;
+}
+
+#languageSwitcher span {
+    display: none;  
+}
+
+/* ---------------------------------------------------------------------- */
+/* JS-created Code
+/* ---------------------------------------------------------------------- */
+#languageSwitcher a {
+    text-decoration: none;
+    display: block; 
+    padding: 0.5em 6px 0.5em 28px; /* 6px 6px 6px 28px */
+    color: #444;
+    width: 7em; /* 84px; total width: 120px */
+    background-repeat: no-repeat;
+    background-position: 6px center; 
+}
+
+#languageSwitcher a:hover {
+    color: #000;    
+}
+
+#languageSwitcher a.current:link, #languageSwitcher a.current:visited, #languageSwitcher a.current:active {
+    position: relative; /* sets the initial position for the trigger arrow */
+    background-color: #FFF;
+    border: 1px solid #E5E5E5;
+    border-radius: 3px;
+    height: 1.25em; /* 15px */
+}
+
+#languageSwitcher a.current:hover, 
+#languageSwitcher ul.dropdown li:hover {
+    background-color: #F7F7F7;
+}
+
+#languageSwitcher a.active { /* This style is applied as long as the drop-down menu is visible. */
+    border-bottom: none !important;
+    border-radius: 3px 3px 0 0 !important;
+}
+
+#languageSwitcher span.trigger {
+    display: block;
+    position: absolute;
+    width: 9px;
+    height: 5px;
+    text-indent: -10000em;
+    top: 0.8em; /* 6px */
+    right: 6px;
+}
+
+#languageSwitcher a.current:link span.trigger, #languageSwitcher a.current:visited span.trigger {
+    background: url(../images/arrow-down.gif) no-repeat left top;   
+}
+
+#languageSwitcher a.current:hover span.trigger, #languageSwitcher a.current:active span.trigger, #languageSwitcher a.active span.trigger {
+    background-position: left bottom !important;
+}
+
+/* Drop-Down Menu */
+
+#languageSwitcher ul.dropdown { 
+    display: none;
+    position: absolute;
+    top: 2.333em; /* 28px */
+    left: 0;
+    background-color: #FFF;
+    border: 1px solid #E5E5E5;
+    border-top: none !important;
+    border-radius: 0 0 3px 3px;
+}
+
+#languageSwitcher ul.dropdown li { 
+    border-top: 1px dotted #D4D4D4;
+}
+
+#languageSwitcher ul.dropdown li:last-child { 
+    border-radius: 0 0 3px 3px;
+}
+
+#country {   float: left;    margin-right: 5px;    margin-top: 5px; }
