@@ -1,0 +1,2 @@
+#base=source
+jquery.cookie.js

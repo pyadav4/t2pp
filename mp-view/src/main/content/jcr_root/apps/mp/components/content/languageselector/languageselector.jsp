@@ -9,15 +9,12 @@
 <%@page import="java.util.List"%>
 <%@page import="java.util.Map"%>
 
-<div class="lang right top"> <span class="btn">India(English)</span>
+<div class="lang right top"> <span id="selectedLanguage" class="btn">India(English)</span>
   <div class="links" style="display:none ;">
 	<%
+	String websiteRoothPath = currentStyle.get("websiterootpath","/content/mp");
 	LanguageSelector languageSelector = new LanguageSelector();
-	//System.out.println("*** languageSelector"+ languageSelector);
-	//System.out.println("*** resourceResolver"+ resourceResolver);
-	languageSelector.getLanguageSelector(resourceResolver);
-	//out.println("*** "+ languageSelector.getLanguageSelector(resourceResolver));
-	Map<Node, Map> languageSelectorMap = languageSelector.getLanguageSelector(resourceResolver);
+	Map<Node, Map> languageSelectorMap = languageSelector.getLanguageSelector(resourceResolver,websiteRoothPath);
 	Set<Node> regionNodes = languageSelectorMap.keySet();
 	for(Node regionNode : regionNodes){
 		//out.println("Region Node:: " +regionNode.getName());
@@ -29,7 +26,7 @@
 		    //out.println("Country Node:: " +countryNode.getName());
 		    List<Node> languageSet = countryLanguageMap.get(countryNode);
 		    for(Node languageNode : languageSet){
-		    	out.println("<a href=\""+languageNode.getPath()+".html\">" +countryNode.getProperty("jcr:content/jcr:title").getString()+" ("+languageNode.getProperty("jcr:content/jcr:title").getString()+")</a>");
+		    	out.println("<a onClick=\"setLanguageInCookie('"+countryNode.getProperty("jcr:content/jcr:title").getString()+" ("+languageNode.getProperty("jcr:content/jcr:title").getString()+")')\" href=\""+languageNode.getPath()+".html\">" +countryNode.getProperty("jcr:content/jcr:title").getString()+" ("+languageNode.getProperty("jcr:content/jcr:title").getString()+")</a>");
 	            //out.println("Language Node:: " +languageNode.getName());
 	        }   
 		}
@@ -43,12 +40,12 @@
 
  public class LanguageSelector {
      
-    public Map<Node, Map> getLanguageSelector(ResourceResolver resourceResolver) {
+    public Map<Node, Map> getLanguageSelector(ResourceResolver resourceResolver, String websiteRootPath) {
     	//System.out.println("inside getLanguageSelector :: "+resourceResolver);
     	Map<Node, Map> regionCountryMap = new HashMap<Node, Map>();
         Map<Node, List> countryLanguageMap = null; 
     	List<Node> regionSet = null;
-         Node websiteRootNode = resourceResolver.getResource("/content/mp").adaptTo(Node.class);
+         Node websiteRootNode = resourceResolver.getResource(websiteRootPath).adaptTo(Node.class);
          if(websiteRootNode!=null){
         	 try{
                  regionSet = getNodeSet(websiteRootNode);
@@ -86,15 +83,22 @@
          }
          return nodeSet;
      }
-
  }
 %>
 
-<script>
+<script type="text/javascript">
 $(document).ready(function(){
     $(".lang .btn").click(function(){
         $(".lang .links").slideToggle();
         $( this ).toggleClass( "selected" );
-    });   
+    });
+    var langSelected = $.cookie("languageSelected");
+    if(langSelected != null){
+    	$("#selectedLanguage").html(langSelected);
+    }   
 });
+
+function setLanguageInCookie(language) {
+	  $.cookie("languageSelected", language, {path: '/'});
+	}
 </script>
