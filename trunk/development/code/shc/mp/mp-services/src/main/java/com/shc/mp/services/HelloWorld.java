@@ -13,7 +13,7 @@ import org.osgi.framework.Constants;
 @Component(immediate = true, metatype = true)
 @Service(HelloWorld.class)
 @Properties({
-    @Property(name = Constants.SERVICE_VENDOR, value = "CQ Blueprints"),
+    @Property(name = Constants.SERVICE_VENDOR, value = "YS"),
     @Property(name = Constants.SERVICE_DESCRIPTION, value = "Provides a friendly greeting.")
 })
 public class HelloWorld {
