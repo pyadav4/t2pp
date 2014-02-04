@@ -5,8 +5,9 @@
         <exclude pattern="/apps/mp/install.*"/>
         <exclude pattern="/apps/mp/runmodes.*"/>
 		<exclude pattern="/apps/mp/src.*"/>
+		<exclude pattern="^.*/rep:accessControl" />
     </filter>
 	<filter root="/etc/designs/mp">
-        <exclude pattern="/etc/designs/mp/jcr:content"/>
+		<exclude pattern="^.*/rep:accessControl" />
     </filter>
 </workspaceFilter>
