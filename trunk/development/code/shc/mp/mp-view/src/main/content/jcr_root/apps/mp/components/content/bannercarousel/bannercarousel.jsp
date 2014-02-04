@@ -4,7 +4,7 @@
              com.shc.mp.utils.QueryService, com.day.cq.wcm.api.WCMMode" %>
             
      
-            
+<cq:includeClientLib  categories="cq-banner"/>          
 Advertisement
 <%
 BannerUtil bc = new BannerUtil();
@@ -19,36 +19,23 @@ pageContext.setAttribute("wcmEditMode",WCMMode.fromRequest(request)==WCMMode.EDI
         <img src="/libs/cq/ui/resources/0.gif" class="cq-table-placeholder" alt="Banner Carousel" title="Banner Carousel" />
     </c:when>
     <c:otherwise>
-       <div class="panelList">
-           <c:forEach items="${bannersList}" var="slide">
-                <article class="panel generic">
-                    <div class="panelWrapper">
-                        <div class="details">
-                            <div class="wrapper">
-                                <div class="intro">
-                                    <em>${slide.pageSubTitle}</em>
-                                </div>
-                                <header>
-                                    <h1>${slide.pageTitle}</h1>
-                                </header>
-                                <ul>
-                                    <li> 
-                                        <div class="button primary">
-                                            <a href="${slide.pagePath}.html" >learn more</a>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="hero-img">
-                            <img src="${slide.image}" />
-                        </div>
-                    </div>
-                </article>
-            </c:forEach>
-        </div>
-    <div class="next icon"><span>&#x2192;</span></div>
-    <div class="prev icon"><span>&#x2190;</span></div>
-    <div class="bullet-pagination icon"></div>
+        <div id="slider-images">
+    <div> </div>
+  </div>
+  <div id="slider" class="clearfix"> 
+  <c:forEach items="${bannersList}" var="slide">
+    <div class="slider-item on" rel="${slide.image}">
+      <h2> <span class="yellow">${slide.pageTitle}</span> <span class="red">${slide.pageSubTitle}</span>
+        
+        <a target="_blank" class="btn-cta-play" href="${slide.pagePath}.html"><span><i>Learn More</i></span></a> </h2>
+    </div>
+  </c:forEach>
+  <a href="" id="btn-sliderleft"><span></span></a> <a href="" id="btn-sliderright"><span></span></a> 
+  </div>
     </c:otherwise> 
 </c:choose>
+
+
+
+
+ 
