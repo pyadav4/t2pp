@@ -5,7 +5,6 @@
             
      
 <cq:includeClientLib  categories="cq-banner"/>          
-Advertisement
 <%
 BannerUtil bc = new BannerUtil();
 List<BCBean> list =bc.getResults(currentNode, currentPage, resource, sling) ;
@@ -26,7 +25,7 @@ pageContext.setAttribute("wcmEditMode",WCMMode.fromRequest(request)==WCMMode.EDI
   <c:forEach items="${bannersList}" var="slide">
     <div class="slider-item on" rel="${slide.image}">
       <h2> <span class="yellow">${slide.pageTitle}</span> <span class="red">${slide.pageSubTitle}</span>
-        
+        <p> ${slide.pageDescription} </p>
         <a target="_blank" class="btn-cta-play" href="${slide.pagePath}.html"><span><i>Learn More</i></span></a> </h2>
     </div>
   </c:forEach>
