@@ -17,7 +17,7 @@
 	});*/
 
 	function popUpBox() { 
-
+		//alert("popUpBox");
 	    Shadowbox.setup("a.group", {
 	        gallery:        "group",
 	        continuous:     true,
@@ -41,8 +41,4 @@
 	    // a darker overlay looks better on this particular site
 	    overlayOpacity: 0.5
 	}, popUpBox);
-</script>
-
-<ul class="gallery grid">
-  <li><a rel="shadowbox" href="/content/dam/mp/ext/tiger.jpg" title="Tiger" ><img  src="/content/dam/mp/shadowbox/tiger-t.jpg" alt="" ></a><h2>Tiger</h2></li>
-</ul>  
+</script> 

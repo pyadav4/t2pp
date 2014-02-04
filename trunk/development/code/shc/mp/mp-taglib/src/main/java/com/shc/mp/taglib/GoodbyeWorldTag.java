@@ -1,4 +1,4 @@
-package com.shc.commons.taglib;
+package com.shc.mp.taglib;
 
 import com.squeakysand.jsp.tagext.EnhancedSimpleTagSupport;
 import com.squeakysand.jsp.tagext.annotations.JspTag;

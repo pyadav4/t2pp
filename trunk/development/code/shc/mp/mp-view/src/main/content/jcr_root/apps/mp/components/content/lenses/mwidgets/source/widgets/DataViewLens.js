@@ -1,3 +1,13 @@
+function getShadowboxPopup(resourcePath){
+	var extension = resourcePath.split('.').pop().toLowerCase();
+//	console.log(extension);
+	if(extension=="png"||extension=="jpeg"||extension=="jpg"){
+		Shadowbox.open({content:resourcePath,player:'img'});
+	}
+    else if(extension=="swf"||extension=="mp4"||extension=="ogg" || extension=="pdf"  || extension=="doc"  || extension=="docx"){
+        Shadowbox.open({content:resourcePath,player:'iframe', height:480, width:640});
+	}
+}
 
 CQ.search.DataViewLens = CQ.Ext.extend(CQ.search.Lens, {
 
@@ -65,8 +75,8 @@ CQ.search.DataViewLens = CQ.Ext.extend(CQ.search.Lens, {
                 "tpl":
                 	'<ul class="gallery grid">' +
                     '<tpl for=".">' +
-                    	'<li>' +
-                    		'<a class="group" href="{[CQ.HTTP.externalize(values.path,true)]}" title="Tiger" ><img  src="{[CQ.HTTP.externalize(values.path,true)]}.thumb.100.140{[values.ck ? "." + values.ck : ""]}.png" alt="" ></a>' +
+                    	'<li onclick="getShadowboxPopup(\'{[CQ.HTTP.externalize(values.path,true)]}\');">' +
+                    		'<a class="group" ><img  src="{[CQ.HTTP.externalize(values.path,true)]}.thumb.100.140{[values.ck ? "." + values.ck : ""]}.png" alt="" ></a>' +
                     		'<h2>{[CQ.shared.XSS.getXSSValue(values.shortTitle)]}</h2>' +
                     	'</li>'+
                     '</tpl>' +
