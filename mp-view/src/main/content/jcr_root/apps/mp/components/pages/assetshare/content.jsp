@@ -3,7 +3,7 @@
 <div class="container_16">
     <div class="grid_16 body_container">
         <div class="querybuilder-wrapper">
-            <cq:include path="querybuilder" resourceType="mp/components/content/assetshare/querybuilder" />
+            <cq:include path="querybuilder" resourceType="dam/components/assetshare/querybuilder" />
         </div>
     </div>
     <div class="clear"></div>
