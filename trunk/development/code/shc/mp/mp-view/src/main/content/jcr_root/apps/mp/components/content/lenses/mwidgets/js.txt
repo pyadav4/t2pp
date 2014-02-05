@@ -1,18 +1,3 @@
 #base=source
 
-#license
-license.js
-
-#head
-CQ.search.js
-
-#utils
-utils/Util.js
-
-#widgets
-widgets/QueryBuilder.js
-widgets/Lens.js
 widgets/DataViewLens.js
-widgets/IFrameLens.js
-widgets/LensContainer.js
-widgets/LensDeck.js

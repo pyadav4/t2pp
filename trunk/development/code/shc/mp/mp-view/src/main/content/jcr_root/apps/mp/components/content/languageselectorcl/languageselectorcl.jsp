@@ -9,22 +9,18 @@
 <%@page import="java.util.List"%>
 <%@page import="java.util.Map"%>
 
-<script type="text/javascript">
-        $(document).ready(function() {
-            $('#languageSwitcher').languageSwitcher({ effect: 'fade', testMode:true         });
-        });
-    </script>
-
 <script type='text/javascript'>//<![CDATA[ 
-$(window).load(function(){ 
-        $("#languageSwitcher ul li").hide();
-        $("li."+$("#country").val()).show();
-$(function() {
-    $("#country").change(function() {
+$(function() {   
+    $("#language option").hide();  
+    $("#language ."+$('#country').val()).each(function(){ $(this).show();});  
+    
+    $("#country").change(function() { 
         $("[class^=country_]").each(function(){ $(this).hide();});
-        $("."+$(this).val()).each(function(){ $(this).show();}); 
+        $("."+$(this).val()).each(function(){ $(this).show();});  
+        $('#language').find("option:visible:first")[0].selected = true;
+        $.cookie("countrySelectedCl", $( this ).val(), {path: '/'});
+        $.cookie("langSelectedCl", $( "#language").val(), {path: '/'});
     }); 
-});
 });//]]>  
 
 </script>
@@ -37,7 +33,7 @@ $(function() {
     Set<Node> countryNodes = countryLanguageMap.keySet();
     String defaultCountry = languageSelector.getDefaultCountry(resourceResolver,websiteLanguagePath);
     String defaultLanguage = languageSelector.getDefaultLanguage(resourceResolver,websiteLanguagePath);
-    out.println("<select id=\"country\" name=\"country\" class=\"dropdown\">");
+    out.println("<select id=\"country\" name=\"country\" >");
     for(Node countryNode : countryNodes){
     	if(defaultCountry != null && defaultCountry.equals(countryNode.getName())){
     		out.println("<option value=\"country_"+countryNode.getName()+"\" selected>"+countryNode.getProperty("jcr:content/jcr:title").getString()+"</option>");
@@ -48,32 +44,19 @@ $(function() {
     }
     out.println("</select>");
     
-    // Generate style for flags to have in drop down. - Start
-    out.println("<style type=\"text/css\">");
-    for(Node countryNode : countryNodes){
-        List<Node> languageSet = countryLanguageMap.get(countryNode);
-        for(Node languageNode : languageSet){
-            out.println(".country_"+countryNode.getName()+", #"+countryNode.getName()+"_"+languageNode.getName()+"{ background-image: url(/content/dam/mp/countryflags/"+countryNode.getName()+".png); background-repeat: no-repeat;background-position: 6px center;}")  ;
-        }   
-    }
-    out.println("</style>");
-    // Generate style for flags to have in drop down. - End
-    
-    out.println("<div id=\"languageSwitcher\"> <span>");
-    out.println("<select id=\"-language-options\">");
+    out.println("<select id=\"language\">");
     for(Node countryNode : countryNodes){
         List<Node> languageSet = countryLanguageMap.get(countryNode);
         for(Node languageNode : languageSet){
         	if(defaultLanguage != null && defaultLanguage.equals(languageNode.getName())){
-        		out.println("<option id=\"" + countryNode.getName() + "_" + languageNode.getName() + "\" value=\"" + countryNode.getName() + "_" + languageNode.getName() + "\"  class=\"country_"+countryNode.getName()+"\" selected>" + languageNode.getProperty("jcr:content/jcr:title").getString()+"</option>");
+        		out.println("<option value=\"" + countryNode.getName() + "_" + languageNode.getName() + "\"  class=\"country_"+countryNode.getName()+"\" selected>" + languageNode.getProperty("jcr:content/jcr:title").getString()+"</option>");
             }
             else {
-            	out.println("<option id=\"" + countryNode.getName() + "_" + languageNode.getName() + "\" value=\"" + countryNode.getName() + "_" + languageNode.getName() + "\"  class=\"country_"+countryNode.getName()+"\">" + languageNode.getProperty("jcr:content/jcr:title").getString()+"</option>");   
+            	out.println("<option value=\"" + countryNode.getName() + "_" + languageNode.getName() + "\"  class=\"country_"+countryNode.getName()+"\">" + languageNode.getProperty("jcr:content/jcr:title").getString()+"</option>");   
             }
         }   
     }
     out.println("</select>");
-    out.println("</span></div>");
     %>
 <br>
 <%!
@@ -154,23 +137,18 @@ $(document).ready(function(){
     
     var langSelectedCl = $.cookie("langSelectedCl");
     if(langSelectedCl != null){
-        $("#-language-options").val(langSelectedCl);
+        $("#language").val(langSelectedCl);
+    }
+    else {
+    	$.cookie("langSelectedCl", $( "#language").val(), {path: '/'});
     }
     var countrySelectedCl = $.cookie("countrySelectedCl");
     if(countrySelectedCl != null){
-        $("#region").val(countrySelectedCl);
+        $("#country").val(countrySelectedCl);
+    }
+    else {
+    	$.cookie("countrySelectedCl", $( "#country" ).val(), {path: '/'});
     }   
 });
-
-function setLanguageInCookie(language) {
-      $.cookie("langSelectedCl", language, {path: '/'});
-    }
-$( "#-language-options").change(function() {
-	$.cookie("langSelectedCl", $( this ).val(), {path: '/'});
-	});
-
-$( "#region" ).change(function() {
-    $.cookie("countrySelectedCl", $( this ).val(), {path: '/'});
-    });
 
 </script>
