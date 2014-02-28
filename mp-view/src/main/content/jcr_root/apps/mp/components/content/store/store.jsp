@@ -1,4 +1,4 @@
-<%@include file="/apps/impact/global/global.jsp"%>
+<%@include file="/libs/foundation/global.jsp"%>
 
 <div class="stores">
 Store Name : ${properties['name']} <br/>
