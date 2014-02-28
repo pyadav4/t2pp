@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="cq:Dialog"
+    title="dialog"
+    xtype="dialog">
+    <items
+        jcr:primaryType="cq:Widget"
+        xtype="tabpanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <tab1
+                jcr:primaryType="cq:Panel"
+                title="Configure Store Locator">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <title
+                        jcr:primaryType="cq:Widget"
+                        allowedBlank="false"
+                        fieldLabel="Enter Title"
+                        name="./title"
+                        xtype="textfield"/>
+                    <datasource
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Enter the path of Data Source"
+                        name="./datasource"
+                        xtype="pathfield"/>
+                    <radius
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Enter the radius for search"
+                        name="./radius"
+                        xtype="textfield"/>
+                </items>
+            </tab1>
+        </items>
+    </items>
+</jcr:root>

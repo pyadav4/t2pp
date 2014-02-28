@@ -28,4 +28,4 @@
         %><img src="/libs/cq/ui/resources/0.gif" class="cq-teaser-placeholder" alt=""/><%
     }
 %>
-<script src="/etc/designs/ada-designs/author-libs/jquery.cookie.js"></script>
+

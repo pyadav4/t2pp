@@ -1,0 +1,232 @@
+body { font-family: sans-serif; }
+#panel { width: 29%;
+     float: left;
+     margin: 0 0 0 42px;
+     padding: 0 20px;
+     height: 526px;
+     background: rgb(241,241, 241);
+}
+#map-canvas {
+    position: relative;
+    background-color: rgb(229, 227, 223);
+    float: left;
+    -webkit-transform: translateZ(0);
+    width: 64.69%;
+    height: 528px;
+}
+.storelocator-panel {
+  border: 1px solid #ccc;
+}
+.storelocator-panel .store-list {
+  margin: 0;
+  padding: 0;
+}
+
+.storelocator-panel .store-list li,
+.storelocator-panel .directions-panel {
+  padding: 7px 0;
+list-style: none;
+width:233px;
+}
+.storelocator-panel .directions-panel {
+  font-size: 0.8em;
+}
+
+.storelocator-panel .store-list li.store:hover {
+  cursor: pointer;
+  background: rgb(228,228, 228);
+}
+
+.storelocator-panel .store-list li.highlighted,
+.storelocator-panel .store-list li.highlighted:hover {
+  background: rgb(228, 228, 228);
+
+}
+
+.storelocator-panel .directions {
+  display: none;
+}
+
+.storelocator-panel .location-search {
+  padding: 0px 5px 5px;
+}
+
+.storelocator-panel .location-search input {
+  width: 95%;
+}
+
+.storelocator-panel .location-search h4 {
+font-size: 20px;
+margin: 0 0 0 -6px;
+color: #3671EE;
+padding: 20px 0 15px 0;
+font-family: 'Helvetica-Neue-Lt-std';
+}
+
+.storelocator-panel .store-list .no-stores {
+  color: red;
+  font-size:16px;
+  font-family:Lato-Light;
+}
+.store .storeName {
+  font-weight: bold;
+}
+
+.store .address,.store .phonenumber,
+.store .email
+{
+    font-size: 80%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left:6px;
+    display: block;
+    font-family: "Lato-Light";
+    font-size:14px;
+    color:#898989;
+}
+#panel {
+    width: 238px;
+    float: left;
+    margin: 13px 0px 0px 0px;
+    padding: 0 19px;
+    max-height: 528px;
+    background: rgb(241,241, 241);
+}
+
+.storelocator h1 {
+    color: rgb(237, 64, 54);
+    font-size: 24px;
+}
+
+#map-canvas, #panel {
+    height: 528px;
+    border: none;
+}
+#map-canvas
+{
+    margin-top:15px;
+}
+
+#panel
+{
+    margin-top:15px;
+}
+
+.storelocator-panel .location-search input[autocomplete="off"]{
+    width :194px;
+    height:34px;
+    float: left;
+    padding: 0px 0px 0px 7px;
+    margin-bottom:8px;
+    font-family: "Lato-regular";
+    font-size:16px;
+    color:#9b9b9b;
+    margin-left:-6px;
+}
+
+.storelocator-panel .location-search input[type="submit"] {
+    display: inline;
+    width: 34px;
+    height:38px;
+    float: left;
+    background-color: rgb(54, 156, 237);
+    background-image: url('/apps/mp/components/content/storelocator/apps-storelocator/images/search.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-left:-2px;
+}
+
+.store.highlighted .title {
+    color: rgb(54, 156, 237);
+}
+
+.storelocator-filter {
+    width: 241px;
+}
+.storelocator-panel .store-list {
+    margin: 0;
+    padding: 8px 9px 0 0;
+    width: 243px;
+    clear: both;
+    height: 365px;    
+    overflow: auto;
+}
+.storeWrap {
+    margin-left: 30px;
+}
+.store .locaterIcon{
+    float: left;
+    margin: 5px 8px 0 5px;
+    height: 26px;
+    width: 12px;
+}
+
+.location-search input[autocomplete="off"] {
+    color: #6d6d6d;
+}
+
+.gm-style-iw .store .address{
+    font-size: 80%;
+    margin-top: 0.2em;
+    margin-bottom: 0.5em;
+    margin-left: 0;
+    display: block;
+    font-size: 14px;
+    font-family: "Lato-Light";
+    color: #898989;
+}
+.gm-style-iw .store .storeWrap {
+    margin-left: 0;
+}
+
+.gm-style-iw .store .locaterIcon{
+    background: no-repeat center url('/apps/mp/components/content/storelocator/apps-storelocator/images/balloonEnable.png');
+    display:none;
+}
+.store.highlighted .address{
+    font-size: 80%;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    display: block;
+    font-size: 14px;
+    font-family: "Lato-Light";
+    color: #898989;
+}
+.store.highlighted .locaterIcon{
+    background: no-repeat center url('/apps/mp/components/content/storelocator/apps-storelocator/images/balloonEnable.png');
+}
+.store .locaterIcon {
+    float: left;
+    margin: 5px 8px 0 5px;
+    height: 26px;
+    width: 20px;
+    color: #FFFFFF;
+    padding: 2px 5px;
+    background: no-repeat center url('/apps/mp/components/content/storelocator/apps-storelocator/images/balloonDisable.png');
+}
+
+.store .locaterIcon {
+    float: left;
+    margin: 1px 8px 0 6px;
+    height: 26px;
+    width: 3%;
+    color: #FFFFFF;
+    padding: 0px 7px;
+    font-family:"Lato Bold";
+    background: no-repeat center url('/apps/mp/components/content/storelocator/apps-storelocator/images/balloonDisable.png');
+}
+
+.labels {
+     color: white;
+     font-family: "Lucida Grande", "Arial", sans-serif;
+     font-size: 10px;
+     font-color:white;
+     width: 10px;
+}
+
+li.store
+{
+    border-bottom: 1px solid #B4A7A7;
+    border-bottom-style: dotted;
+    padding-bottom:12px;
+}
