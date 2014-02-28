@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="cq:Dialog"
+    title="dialog"
+    xtype="dialog">
+    <items
+        jcr:primaryType="cq:Widget"
+        xtype="tabpanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <tab1
+                jcr:primaryType="cq:Panel"
+                title="Tab 1">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <name
+                        jcr:primaryType="cq:Widget"
+                        allowedBlank="false"
+                        fieldLabel="Name"
+                        name="./name"
+                        xtype="textfield"/>
+                    <promotionaltext
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Promotional text"
+                        name="./promotionaltext"
+                        xtype="textarea"/>
+                    <longitude
+                        jcr:primaryType="cq:Widget"
+                        allowedBlank="false"
+                        fieldLabel="longitude"
+                        name="./longitude"
+                        xtype="textfield"/>
+                    <latitude
+                        jcr:primaryType="cq:Widget"
+                        allowedBlank="false"
+                        fieldLabel="latitude"
+                        name="./latitude"
+                        xtype="textfield"/>
+                    <address
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="address"
+                        name="./address"
+                        xtype="textfield"/>
+                    <state
+                        jcr:primaryType="cq:Widget"
+                        allowedBlank="false"
+                        fieldLabel="State"
+                        name="./state"
+                        xtype="textfield"/>
+                    <country
+                        jcr:primaryType="cq:Widget"
+                        allowedBlank="false"
+                        fieldLabel="Country"
+                        name="./country"
+                        xtype="textfield"/>
+                    <phonenumber
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Phone number"
+                        name="./phonenumber"
+                        xtype="textfield"/>
+                    <email
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Email"
+                        name="./email"
+                        xtype="textfield"/>
+                </items>
+            </tab1>
+        </items>
+    </items>
+</jcr:root>
