@@ -192,7 +192,7 @@ public class SitemapUtil {
 			if (page.hasContent()) {
 				if (!page.isHideInNav() && replicator.getReplicationStatus(page.adaptTo(Node.class).getSession(), page.getPath()).isActivated()) { // Check if the page is hidden in nav
 					// <url> element
-				System.out.println("Page path "+ page.getPath());
+				//System.out.println("Page path "+ page.getPath());
 					Element url = doc.createElement("url");
 					rootElement.appendChild(url);
 					//title element
