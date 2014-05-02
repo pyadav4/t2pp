@@ -86,7 +86,7 @@ public class ReplicationEventHandler implements EventHandler, JobProcessor {
         try {
 			config = configAdmin.getConfiguration("com.shc.mp.services.ReplicationEventHandler");
              this.siteRoot = (String)config.getProperties().get("sitemap.siteroot");
-     		 System.out.println("Param Values :{}"+ this.siteRoot);
+     		 //System.out.println("Param Values :{}"+ this.siteRoot);
 
 		} catch (IOException e) {
 			LOGGER.error("Error occured in intializeParams of ReplicationEventHandler", e);
